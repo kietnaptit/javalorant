@@ -11,7 +11,13 @@
 		BookCode: <input type="number" name="bookcode"></br>
 		Title: <input type="text" name="title"></br>
 		Author: <input type="text" name="author"></br>
-		Category: <input type="text" name="category"></br>
+		Category: <!-- <input type="text" name="category"></br> -->
+			<select name="category" id="category">
+	    		<option value="Fiction">Fiction</option>
+	    		<option value="Drama">Drama</option>
+	    		<option value="Comic">Comic</option>
+	  		</select>
+	  		<br>
 		Approved: <input type="checkbox" name="approved"></br>
 		<input type="submit" value="Add Book">
 	</form>

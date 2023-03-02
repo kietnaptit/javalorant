@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Tính điểm đánh golf</title>
+    </head>
+    <body>
+        <select id = "par">
+            <option value="3">Par 3</option>
+            <option value="4">Par 4</option>
+            <option value="5">Par 5</option>
+        </select>
+        <label for="score">Số gậy: </label>
+        <input type="number" id="score" value="">
+        <button onclick="submitHandler()">Submit Điểm</button>
+        <p id = "result"></p>
+    </body>
+    <script>
+        function submitHandler(){
+            var par = parseFloat(document.querySelector("#par").value);
+            var score = "";
+            score = parseFloat(document.querySelector("#score").value);
+            var ketqua = "số Gậy không hợp lệ";
+            if(score == 1){
+                ketqua = "Hole-in-one!";
+            }else if(score <= par - 2){
+                ketqua = "Eagle";
+            }else if(score <= par - 1){
+                ketqua = "Birdy";
+            }else if(score == par){
+                ketqua = "Par";
+            }else if(score == par + 1){
+                ketqua = "Bogey";
+            }else if(score == par + 2){
+                ketqua = "Double Bogey";
+            }else if(score >= par + 3){
+                ketqua = "Thua rồi bạn ơi";
+            }
+            if(score == "" || score == 0 || score < 0 ){
+                alert("số Gậy không hợp lệ");
+            }else {
+                document.getElementById("result").innerHTML = ketqua;
+            }
+        }
+    </script>
+</html>
